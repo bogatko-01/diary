@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="assets/title/book-solid.svg" type="image/png">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Diary</title>
+</head>
+
+<body>
+    <div class="wrapper-login">
+        <h2>Login</h2>
+        <form action="" class="form-login">
+            <input type="text" class="" id="username" placeholder="Username">
+            <div class="error"></div>
+            <button id="login" class="">Login</button>
+        </form>
+        <div class="create-account">
+            <span>
+                Don't have an account?
+            </span>
+            <span href="" class="btn-create" id="btn-create">Create an account</span>
+        </div>
+    </div>
+    <div class="wrapper-registration">
+        <h2>Create an account</h2>
+        <form action="" class="form-registration">
+            <input type="text" id="createUsername" placeholder="Create Username">
+            <div class="error-create"></div>
+            <button id="createUsernameBtn">Create account</button>
+        </form>
+    </div>
+
+    <section class="section-content" id="sectionContent">
+        <div class="btn-out" id="btnOut">
+            <button>Выход</button>
+        </div>
+        <nav class="menu" id="menu">
+            <div class="menu-btn-mobile" id="menuBtnMobile">
+                <span></span>
+            </div>
+            <ul class="menu-nav">
+                <li data-pointMenu="costCalculator">Калькулятор расходов</li>
+                <li data-pointMenu="subscriptions">Подписки</li>
+                <li data-pointMenu="ToDo">TO DO</li>
+                <li data-pointMenu="ToDoCost">TO DO Cost</li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="cost-calculator" id="costCalculator">
+                <div class="cost-calculator__body">
+                    <div class="income-in-month">
+                        <h2>Доход в месяц</h2>
+                        <div class="group">
+                            <input type="number" id="incomeSalary" required>
+                            <span class="bar"></span>
+                            <label>Зарплата</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="incomeSpinOf" required>
+                            <span class="bar"></span>
+                            <label>Доп.доход</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="incomefreelance" required>
+                            <span class="bar"></span>
+                            <label>Фриланс</label>
+                        </div>
+                    </div>
+                    <div class="important-cost">
+                        <h2>Обязательные расходы</h2>
+                        <div class="group">
+                            <input type="number" id="costsFlatRent" required>
+                            <span class="bar"></span>
+                            <label>Аренда квартиры</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="costsHouseServices" required>
+                            <span class="bar"></span>
+                            <label>ЖКХ</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="costsAuto" required>
+                            <span class="bar"></span>
+                            <label>Авто</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="costsCredit" required>
+                            <span class="bar"></span>
+                            <label>Кредиты</label>
+                        </div>
+                    </div>
+                    <div class="other-cost">
+                        <h2>Другие расходы</h2>
+                        <div class="group">
+                            <input type="number" id="otherCostSubscriptions" readonly required>
+                            <span class="bar"></span>
+                            <label>Подписки</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="otherCostSeasonTickets" readonly required>
+                            <span class="bar"></span>
+                            <label>Абонементы</label>
+                        </div>
+                        <div class="group">
+                            <input type="number" id="otherCostMobilePhone" readonly required>
+                            <span class="bar"></span>
+                            <label>Телефон</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cost-calculator__money">
+                    <div>
+                        <label for="totalMonth">Доступно в месяц(без копилки)</label>
+                        <input type="number" id="totalMonth" readonly>
+                    </div>
+                    <div>
+                        <label for="totalDay">Доступно в день</label>
+                        <input type="number" id="totalDay" readonly>
+                    </div>
+                    <div>
+                        <label for="totalYear">Накопим за год</label>
+                        <input type="number" id="totalYear" readonly>
+                    </div>
+                </div>
+                <div class="piggybank">
+                    <div class="moneybox">
+                        <label for="">Сколько откладываем(%)</label>
+                        <input type="range" id="moneyBoxRange" min="0" max="100" value="0">
+                        <div><span id="totalPercents">0</span>%</div>
+                    </div>
+                    <div class="accumulate">
+                        <label for="accumulationInput">Копим</label>
+                        <input type="number" id="accumulationInput">
+                    </div>
+                    <div class="spend">
+                        <label for="spendInput">Тратим</label>
+                        <input type="number" id="spendInput" readonly>
+                    </div>
+                </div>
+                <button class="save-cost" id="saveCost">сохранить</button>
+            </div>
+            <div class="subscriptions" id="subscriptions">
+                <div class="add-subscription">
+                    <button id="addSubscriptions">Добавить подписку</button>
+                    <input type="number" id="allSubscriptonsCost" readonly>
+                </div>
+                <hr>
+                <div class="my-subscription" id="mySubscription">
+                </div>
+                <div class="modal-add-subscription" id="modalAddSubscrtiption">
+                    <div class="card">
+                        <div class="service-name">
+                            <input type="text" id="serviceName" placeholder="Название сервиса">
+                        </div>
+                        <div class="service-logo">
+                            <div class="choose-a-logo" id="chooseALogo">
+                                <div id="logoInner" class="logo-inner">Выбрать лого</div>
+                                <div class="types-of-logo" id="typesOfLogo">
+                                    <div><img src="assets/subscriptions/music-solid.svg" alt=""></div>
+                                    <div><img src="assets/subscriptions/film-solid.svg" alt=""></div>
+                                    <div><img src="assets/subscriptions/youtube-brands.svg" alt=""></div>
+                                    <div><img src="assets/subscriptions/book-solid.svg" alt=""></div>
+                                    <div><img src="assets/subscriptions/tv-solid.svg" alt=""></div>
+                                    <div><img src="assets/subscriptions/gamepad-solid.svg" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="type-subscription">
+                                <label><input type="text" id="typeSubscription" placeholder="Вид подписки"></label>
+                            </div>
+                            <div class="cost-subscription">
+                                <label for="costSubscription">
+                                    Цена
+                                    <input type="number" id="costSubscription">
+                                    <!-- <select name="" id="selectCurrency">
+                                        <option value="USD">USD</option>
+                                        <option value="EUR">EUR</option>
+                                        <option value="BYN">BYN</option>
+                                        <option value="RUB">RUB</option>
+                                    </select> -->
+                                    <span>/месяц</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-btns-block">
+                        <button class="add-modal-btn" id="addModalBtn">Добавить</button>
+                        <button class="close-modal-btn" id="closeModalBtn">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+            <div class="to-do" id="ToDo">
+                <div class="burger-mobile-btn" id="burgerMobileBtn">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars"
+                        class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                    <h2 class="task-list-title-mobile">Мои списки</h2>
+                </div>
+                <div class="all-tasks" id="allTasks">
+                    <h2 class="task-list-title">Мои списки</h2>
+                    <ul class="task-list" id="dataLists">
+                    </ul>
+                    <form class="create-new-list" id="newListForm">
+                        <input type="text" class="new list" id="newListInput" placeholder="Новый список"
+                            aria-label="new list name" />
+                        <button class="btn create" aria-label="create new list">+</button>
+                    </form>
+                </div>
+                <div class="todo-list" id="listDisplayContainer">
+                    <div class="todo-header">
+                        <h2 class="list-title" id="listTitleElement"></h2>
+                        <!-- <p class="task-count" id="listCountElement">3 tasks remaining</p> -->
+                    </div>
+                    <div class="todo-body" id="toDoBody">
+                        <div class="tasks" id="tasksContainer">
+                        </div>
+                        <form class="new-task-creator" id="newTaskForm">
+                            <input type="text" id="newTaskInput" class="new task" placeholder="Добавить задачу" />
+                            <button class="btn create">+</button>
+                        </form>
+                        <div class="delete-stuff">
+                            <button class="btn delete" id="clearCompleteTasksButton">Очистить выполненные
+                                задачи</button>
+                            <button class="btn delete" id="deleteListButton">Удалить список</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="to-do-cost" id="ToDoCost">
+                <div class="to-do-cost__content">
+                    <label for="haveMoney" class="have-money">
+                        Доступно
+                        <input type="number" id="haveMoney" readonly>
+                    </label>
+                    <div class="create-payments" id="createPayments">
+                        <input type="number" class="how-cost" id="howCost" placeholder="Сумма">
+                        <input type="text" class="what-pay" id="whatPay" placeholder="Вид покупки">
+                        <button type="submit" class="send"><svg aria-hidden="true" focusable="false" data-prefix="far"
+                                data-icon="paper-plane" class="svg-inline--fa fa-paper-plane fa-w-16" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path fill="#fff"
+                                    d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z">
+                                </path>
+                            </svg></button>
+                    </div>
+                    <div class="purchases-block" id="purchasesBlock">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

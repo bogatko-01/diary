@@ -1,0 +1,40 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, ol, ul, p, nav, section, audio, video {
+    margin: 0;
+    padding: 0;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+body {
+	line-height: 1;
+}
+ol, ul, li{
+    list-style: none;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+li, button, a {
+    cursor: pointer;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    vertical-align: middle;
+}
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+/* input, textarea {
+    border: none;
+    outline: none;
+}  */
